@@ -1,0 +1,13 @@
+#!/bin/bash
+# $Id: generate-all-rpms,v 1.8 2014/09/16 18:24:43 jocornet Exp $
+# Generate the "official" Snort.org RPMs.
+
+# The following will build 3 binary and 1 source RPM as follows:
+#	snort-x.x.x-x.i386.rpm
+#	snort-openappid-x.x.x-x.i386.rpm
+#	snort-x.x.x-x.src.rpm
+#
+
+rpmbuild -bb --target i386 snort.spec 
+rpmbuild -bb --target i386 --with openappid snort.spec 
+rpmbuild -bs --target i386 snort.spec

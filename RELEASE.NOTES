@@ -1,0 +1,7 @@
+2015-07-14 Snort 2.9.7.5
+
+[*] Improvements
+
+*  Added improved support to the Stream preprocessor for asynchronous TCP traffic.
+
+*  Active response no longer sets the FIN flag on the last segment sent.
