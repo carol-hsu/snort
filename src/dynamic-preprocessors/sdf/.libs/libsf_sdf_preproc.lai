@@ -17,7 +17,7 @@ old_library='libsf_sdf_preproc.a'
 inherited_linker_flags=''
 
 # Libraries that this one depends upon.
-dependency_libs=' -L/usr/lib /usr/local/lib/libdaq_static.la -L/usr/local/lib /usr/local/lib/libdaq_static_modules.la /usr/lib/libdumbnet.la -lpcre -lnsl -lm -ldl /usr/local/lib/libsfbpf.la -lpcap -lz -lpthread'
+dependency_libs=' -L/usr/lib /usr/local/lib/libdaq_static.la -L/usr/local/lib /usr/local/lib/libdaq_static_modules.la -lpcre -lnsl -lm -ldl -lnfnetlink -lnetfilter_queue /usr/local/lib/libsfbpf.la -lpcap /usr/lib/libdumbnet.la -lz -lpthread'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''

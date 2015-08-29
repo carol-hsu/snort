@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_SFAT_Y_TAB_H_INCLUDED
-# define YY_SFAT_Y_TAB_H_INCLUDED
+#ifndef YY_SFAT_SF_ATTRIBUTE_TABLE_H_INCLUDED
+# define YY_SFAT_SF_ATTRIBUTE_TABLE_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -173,7 +173,7 @@ union YYSTYPE
   AttributeData data;
   MapData mapEntry;
 
-#line 177 "y.tab.h" /* yacc.c:1909  */
+#line 177 "sf_attribute_table.h" /* yacc.c:1909  */
 };
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
@@ -184,4 +184,4 @@ extern YYSTYPE sfat_lval;
 
 int sfat_parse (void);
 
-#endif /* !YY_SFAT_Y_TAB_H_INCLUDED  */
+#endif /* !YY_SFAT_SF_ATTRIBUTE_TABLE_H_INCLUDED  */

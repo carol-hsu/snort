@@ -601,121 +601,14 @@ configure:13442: checking for netinet/in.h
 configure:13442: result: yes
 configure:13442: checking libnetfilter_queue/libnetfilter_queue.h usability
 configure:13442: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
-conftest.c:65:51: fatal error: libnetfilter_queue/libnetfilter_queue.h: No such file or directory
- #include <libnetfilter_queue/libnetfilter_queue.h>
-                                                   ^
-compilation terminated.
-configure:13442: $? = 1
-configure: failed program was:
-| /* confdefs.h */
-| #define PACKAGE_NAME "daq"
-| #define PACKAGE_TARNAME "daq"
-| #define PACKAGE_VERSION "2.0.6"
-| #define PACKAGE_STRING "daq 2.0.6"
-| #define PACKAGE_BUGREPORT "snort-team@sourcefire.com"
-| #define PACKAGE_URL ""
-| #define PACKAGE "daq"
-| #define VERSION "2.0.6"
-| #define STDC_HEADERS 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_SYS_STAT_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_MEMORY_H 1
-| #define HAVE_STRINGS_H 1
-| #define HAVE_INTTYPES_H 1
-| #define HAVE_STDINT_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_DLFCN_H 1
-| #define LT_OBJDIR ".libs/"
-| #define HAVE_VISIBILITY 1
-| #define INET6 1
-| #define HAVE_LINUX_IF_ETHER_H 1
-| #define HAVE_LINUX_IF_PACKET_H 1
-| #define HAVE_DECL_TPACKET2_HDRLEN 1
-| #define HAVE_DECL_PACKET_TX_RING 1
-| #define HAVE_LIBPCAP 1
-| #define HAVE_NETINET_IN_H 1
-| #define HAVE_NETINET_IN_H 1
-| /* end confdefs.h.  */
-| #include <stdio.h>
-| #ifdef HAVE_SYS_TYPES_H
-| # include <sys/types.h>
-| #endif
-| #ifdef HAVE_SYS_STAT_H
-| # include <sys/stat.h>
-| #endif
-| #ifdef STDC_HEADERS
-| # include <stdlib.h>
-| # include <stddef.h>
-| #else
-| # ifdef HAVE_STDLIB_H
-| #  include <stdlib.h>
-| # endif
-| #endif
-| #ifdef HAVE_STRING_H
-| # if !defined STDC_HEADERS && defined HAVE_MEMORY_H
-| #  include <memory.h>
-| # endif
-| # include <string.h>
-| #endif
-| #ifdef HAVE_STRINGS_H
-| # include <strings.h>
-| #endif
-| #ifdef HAVE_INTTYPES_H
-| # include <inttypes.h>
-| #endif
-| #ifdef HAVE_STDINT_H
-| # include <stdint.h>
-| #endif
-| #ifdef HAVE_UNISTD_H
-| # include <unistd.h>
-| #endif
-| #include <libnetfilter_queue/libnetfilter_queue.h>
-configure:13442: result: no
+configure:13442: $? = 0
+configure:13442: result: yes
 configure:13442: checking libnetfilter_queue/libnetfilter_queue.h presence
 configure:13442: gcc -E  -I/usr/include conftest.c
-conftest.c:32:51: fatal error: libnetfilter_queue/libnetfilter_queue.h: No such file or directory
- #include <libnetfilter_queue/libnetfilter_queue.h>
-                                                   ^
-compilation terminated.
-configure:13442: $? = 1
-configure: failed program was:
-| /* confdefs.h */
-| #define PACKAGE_NAME "daq"
-| #define PACKAGE_TARNAME "daq"
-| #define PACKAGE_VERSION "2.0.6"
-| #define PACKAGE_STRING "daq 2.0.6"
-| #define PACKAGE_BUGREPORT "snort-team@sourcefire.com"
-| #define PACKAGE_URL ""
-| #define PACKAGE "daq"
-| #define VERSION "2.0.6"
-| #define STDC_HEADERS 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_SYS_STAT_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_MEMORY_H 1
-| #define HAVE_STRINGS_H 1
-| #define HAVE_INTTYPES_H 1
-| #define HAVE_STDINT_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_DLFCN_H 1
-| #define LT_OBJDIR ".libs/"
-| #define HAVE_VISIBILITY 1
-| #define INET6 1
-| #define HAVE_LINUX_IF_ETHER_H 1
-| #define HAVE_LINUX_IF_PACKET_H 1
-| #define HAVE_DECL_TPACKET2_HDRLEN 1
-| #define HAVE_DECL_PACKET_TX_RING 1
-| #define HAVE_LIBPCAP 1
-| #define HAVE_NETINET_IN_H 1
-| #define HAVE_NETINET_IN_H 1
-| /* end confdefs.h.  */
-| #include <libnetfilter_queue/libnetfilter_queue.h>
-configure:13442: result: no
+configure:13442: $? = 0
+configure:13442: result: yes
 configure:13442: checking for libnetfilter_queue/libnetfilter_queue.h
-configure:13442: result: no
+configure:13442: result: yes
 configure:13454: checking for linux/netfilter.h
 configure:13454: result: yes
 configure:13487: checking for pcap.h
@@ -731,7 +624,7 @@ configure:13578: $? = 0
 configure:13588: result: yes
 configure:13623: checking for net/netmap.h
 configure:13623: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
-conftest.c:38:24: fatal error: net/netmap.h: No such file or directory
+conftest.c:39:24: fatal error: net/netmap.h: No such file or directory
  #include <net/netmap.h>
                         ^
 compilation terminated.
@@ -767,6 +660,7 @@ configure: failed program was:
 | #define HAVE_LIBPCAP 1
 | #define HAVE_NETINET_IN_H 1
 | #define HAVE_NETINET_IN_H 1
+| #define HAVE_LIBNETFILTER_QUEUE_LIBNETFILTER_QUEUE_H 1
 | /* end confdefs.h.  */
 | 
 |                       #include <stdint.h>
@@ -778,7 +672,7 @@ configure: failed program was:
 configure:13623: result: no
 configure:13623: checking for net/netmap_user.h
 configure:13623: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
-conftest.c:38:29: fatal error: net/netmap_user.h: No such file or directory
+conftest.c:39:29: fatal error: net/netmap_user.h: No such file or directory
  #include <net/netmap_user.h>
                              ^
 compilation terminated.
@@ -814,6 +708,7 @@ configure: failed program was:
 | #define HAVE_LIBPCAP 1
 | #define HAVE_NETINET_IN_H 1
 | #define HAVE_NETINET_IN_H 1
+| #define HAVE_LIBNETFILTER_QUEUE_LIBNETFILTER_QUEUE_H 1
 | /* end confdefs.h.  */
 | 
 |                       #include <stdint.h>
@@ -825,7 +720,7 @@ configure: failed program was:
 configure:13623: result: no
 configure:13640: checking whether NETMAP_API is declared
 configure:13640: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
-conftest.c:36:43: fatal error: net/netmap.h: No such file or directory
+conftest.c:37:43: fatal error: net/netmap.h: No such file or directory
                     #include <net/netmap.h>
                                            ^
 compilation terminated.
@@ -861,6 +756,7 @@ configure: failed program was:
 | #define HAVE_LIBPCAP 1
 | #define HAVE_NETINET_IN_H 1
 | #define HAVE_NETINET_IN_H 1
+| #define HAVE_LIBNETFILTER_QUEUE_LIBNETFILTER_QUEUE_H 1
 | /* end confdefs.h.  */
 | 
 |                    #include <stdint.h>
@@ -884,6 +780,194 @@ configure: failed program was:
 |   return 0;
 | }
 configure:13640: result: no
+configure:13669: checking dnet.h usability
+configure:13669: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+conftest.c:66:18: fatal error: dnet.h: No such file or directory
+ #include <dnet.h>
+                  ^
+compilation terminated.
+configure:13669: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "daq"
+| #define PACKAGE_TARNAME "daq"
+| #define PACKAGE_VERSION "2.0.6"
+| #define PACKAGE_STRING "daq 2.0.6"
+| #define PACKAGE_BUGREPORT "snort-team@sourcefire.com"
+| #define PACKAGE_URL ""
+| #define PACKAGE "daq"
+| #define VERSION "2.0.6"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define LT_OBJDIR ".libs/"
+| #define HAVE_VISIBILITY 1
+| #define INET6 1
+| #define HAVE_LINUX_IF_ETHER_H 1
+| #define HAVE_LINUX_IF_PACKET_H 1
+| #define HAVE_DECL_TPACKET2_HDRLEN 1
+| #define HAVE_DECL_PACKET_TX_RING 1
+| #define HAVE_LIBPCAP 1
+| #define HAVE_NETINET_IN_H 1
+| #define HAVE_NETINET_IN_H 1
+| #define HAVE_LIBNETFILTER_QUEUE_LIBNETFILTER_QUEUE_H 1
+| /* end confdefs.h.  */
+| #include <stdio.h>
+| #ifdef HAVE_SYS_TYPES_H
+| # include <sys/types.h>
+| #endif
+| #ifdef HAVE_SYS_STAT_H
+| # include <sys/stat.h>
+| #endif
+| #ifdef STDC_HEADERS
+| # include <stdlib.h>
+| # include <stddef.h>
+| #else
+| # ifdef HAVE_STDLIB_H
+| #  include <stdlib.h>
+| # endif
+| #endif
+| #ifdef HAVE_STRING_H
+| # if !defined STDC_HEADERS && defined HAVE_MEMORY_H
+| #  include <memory.h>
+| # endif
+| # include <string.h>
+| #endif
+| #ifdef HAVE_STRINGS_H
+| # include <strings.h>
+| #endif
+| #ifdef HAVE_INTTYPES_H
+| # include <inttypes.h>
+| #endif
+| #ifdef HAVE_STDINT_H
+| # include <stdint.h>
+| #endif
+| #ifdef HAVE_UNISTD_H
+| # include <unistd.h>
+| #endif
+| #include <dnet.h>
+configure:13669: result: no
+configure:13669: checking dnet.h presence
+configure:13669: gcc -E  -I/usr/include conftest.c
+conftest.c:33:18: fatal error: dnet.h: No such file or directory
+ #include <dnet.h>
+                  ^
+compilation terminated.
+configure:13669: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "daq"
+| #define PACKAGE_TARNAME "daq"
+| #define PACKAGE_VERSION "2.0.6"
+| #define PACKAGE_STRING "daq 2.0.6"
+| #define PACKAGE_BUGREPORT "snort-team@sourcefire.com"
+| #define PACKAGE_URL ""
+| #define PACKAGE "daq"
+| #define VERSION "2.0.6"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define LT_OBJDIR ".libs/"
+| #define HAVE_VISIBILITY 1
+| #define INET6 1
+| #define HAVE_LINUX_IF_ETHER_H 1
+| #define HAVE_LINUX_IF_PACKET_H 1
+| #define HAVE_DECL_TPACKET2_HDRLEN 1
+| #define HAVE_DECL_PACKET_TX_RING 1
+| #define HAVE_LIBPCAP 1
+| #define HAVE_NETINET_IN_H 1
+| #define HAVE_NETINET_IN_H 1
+| #define HAVE_LIBNETFILTER_QUEUE_LIBNETFILTER_QUEUE_H 1
+| /* end confdefs.h.  */
+| #include <dnet.h>
+configure:13669: result: no
+configure:13669: checking for dnet.h
+configure:13669: result: no
+configure:13683: checking dumbnet.h usability
+configure:13683: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:13683: $? = 0
+configure:13683: result: yes
+configure:13683: checking dumbnet.h presence
+configure:13683: gcc -E  -I/usr/include conftest.c
+configure:13683: $? = 0
+configure:13683: result: yes
+configure:13683: checking for dumbnet.h
+configure:13683: result: yes
+configure:13706: checking for eth_set in -ldnet
+configure:13731: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c -ldnet  -L/usr/lib -ldumbnet -lpcap -lpcap  >&5
+/usr/bin/ld: cannot find -ldnet
+collect2: error: ld returned 1 exit status
+configure:13731: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "daq"
+| #define PACKAGE_TARNAME "daq"
+| #define PACKAGE_VERSION "2.0.6"
+| #define PACKAGE_STRING "daq 2.0.6"
+| #define PACKAGE_BUGREPORT "snort-team@sourcefire.com"
+| #define PACKAGE_URL ""
+| #define PACKAGE "daq"
+| #define VERSION "2.0.6"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define LT_OBJDIR ".libs/"
+| #define HAVE_VISIBILITY 1
+| #define INET6 1
+| #define HAVE_LINUX_IF_ETHER_H 1
+| #define HAVE_LINUX_IF_PACKET_H 1
+| #define HAVE_DECL_TPACKET2_HDRLEN 1
+| #define HAVE_DECL_PACKET_TX_RING 1
+| #define HAVE_LIBPCAP 1
+| #define HAVE_NETINET_IN_H 1
+| #define HAVE_NETINET_IN_H 1
+| #define HAVE_LIBNETFILTER_QUEUE_LIBNETFILTER_QUEUE_H 1
+| #define HAVE_DUMBNET_H 1
+| /* end confdefs.h.  */
+| 
+| /* Override any GCC internal prototype to avoid an error.
+|    Use char because int might match the return type of a GCC
+|    builtin and then its argument prototype would still apply.  */
+| #ifdef __cplusplus
+| extern "C"
+| #endif
+| char eth_set ();
+| int
+| main ()
+| {
+| return eth_set ();
+|   ;
+|   return 0;
+| }
+configure:13740: result: no
+configure:13753: checking for eth_set in -ldumbnet
+configure:13778: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c -ldumbnet  -L/usr/lib -ldumbnet -lpcap -lpcap  >&5
+configure:13778: $? = 0
+configure:13787: result: yes
 configure:13840: checking for dlopen in -ldl
 configure:13865: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c -ldl   >&5
 configure:13865: $? = 0
@@ -961,7 +1045,7 @@ configure:13948: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-
 configure:13948: $? = 0
 configure:13948: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
 conftest.c: In function 'main':
-conftest.c:80:21: error: expected expression before ')' token
+conftest.c:83:21: error: expected expression before ')' token
  if (sizeof ((size_t)))
                      ^
 configure:13948: $? = 1
@@ -996,6 +1080,9 @@ configure: failed program was:
 | #define HAVE_LIBPCAP 1
 | #define HAVE_NETINET_IN_H 1
 | #define HAVE_NETINET_IN_H 1
+| #define HAVE_LIBNETFILTER_QUEUE_LIBNETFILTER_QUEUE_H 1
+| #define HAVE_DUMBNET_H 1
+| #define HAVE_LIBDUMBNET 1
 | #define HAVE_INTTYPES_H 1
 | #define HAVE_MEMORY_H 1
 | #define HAVE_NETDB_H 1
@@ -1099,7 +1186,7 @@ configure:14286: checking for getpagesize
 configure:14286: result: yes
 configure:14286: checking for memset
 configure:14286: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
-conftest.c:76:6: warning: conflicting types for built-in function 'memset' [enabled by default]
+conftest.c:79:6: warning: conflicting types for built-in function 'memset' [enabled by default]
  char memset ();
       ^
 configure:14286: $? = 0
@@ -1114,14 +1201,14 @@ configure:14286: $? = 0
 configure:14286: result: yes
 configure:14286: checking for strchr
 configure:14286: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
-conftest.c:79:6: warning: conflicting types for built-in function 'strchr' [enabled by default]
+conftest.c:82:6: warning: conflicting types for built-in function 'strchr' [enabled by default]
  char strchr ();
       ^
 configure:14286: $? = 0
 configure:14286: result: yes
 configure:14286: checking for strcspn
 configure:14286: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
-conftest.c:80:6: warning: conflicting types for built-in function 'strcspn' [enabled by default]
+conftest.c:83:6: warning: conflicting types for built-in function 'strcspn' [enabled by default]
  char strcspn ();
       ^
 configure:14286: $? = 0
@@ -1136,14 +1223,14 @@ configure:14286: $? = 0
 configure:14286: result: yes
 configure:14286: checking for strrchr
 configure:14286: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
-conftest.c:83:6: warning: conflicting types for built-in function 'strrchr' [enabled by default]
+conftest.c:86:6: warning: conflicting types for built-in function 'strrchr' [enabled by default]
  char strrchr ();
       ^
 configure:14286: $? = 0
 configure:14286: result: yes
 configure:14286: checking for strstr
 configure:14286: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
-conftest.c:84:6: warning: conflicting types for built-in function 'strstr' [enabled by default]
+conftest.c:87:6: warning: conflicting types for built-in function 'strstr' [enabled by default]
  char strstr ();
       ^
 configure:14286: $? = 0
@@ -1171,14 +1258,14 @@ generated by GNU Autoconf 2.69.  Invocation command line was
 
 on four
 
-config.status:1152: creating Makefile
-config.status:1152: creating api/Makefile
-config.status:1152: creating os-daq-modules/Makefile
-config.status:1152: creating os-daq-modules/daq-modules-config
-config.status:1152: creating sfbpf/Makefile
-config.status:1152: creating config.h
-config.status:1381: executing depfiles commands
-config.status:1381: executing libtool commands
+config.status:1155: creating Makefile
+config.status:1155: creating api/Makefile
+config.status:1155: creating os-daq-modules/Makefile
+config.status:1155: creating os-daq-modules/daq-modules-config
+config.status:1155: creating sfbpf/Makefile
+config.status:1155: creating config.h
+config.status:1384: executing depfiles commands
+config.status:1384: executing libtool commands
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -1230,9 +1317,11 @@ ac_cv_have_decl_NETMAP_API=no
 ac_cv_have_decl_PACKET_TX_RING=yes
 ac_cv_have_decl_TPACKET2_HDRLEN=yes
 ac_cv_header_dlfcn_h=yes
+ac_cv_header_dnet_h=no
+ac_cv_header_dumbnet_h=yes
 ac_cv_header_inttypes_h=yes
 ac_cv_header_libipq_h=no
-ac_cv_header_libnetfilter_queue_libnetfilter_queue_h=no
+ac_cv_header_libnetfilter_queue_libnetfilter_queue_h=yes
 ac_cv_header_linux_if_ether_h=yes
 ac_cv_header_linux_if_packet_h=yes
 ac_cv_header_linux_netfilter_h=yes
@@ -1257,6 +1346,8 @@ ac_cv_header_unistd_h=yes
 ac_cv_host=x86_64-unknown-linux-gnu
 ac_cv_lbl_flex_v24=yes
 ac_cv_lib_dl_dlopen=yes
+ac_cv_lib_dnet_eth_set=no
+ac_cv_lib_dumbnet_eth_set=yes
 ac_cv_lib_pcap_pcap_lib_version=yes
 ac_cv_objext=o
 ac_cv_path_EGREP='/bin/grep -E'
@@ -1355,8 +1446,8 @@ BUILD_MODULES_FALSE='#'
 BUILD_MODULES_TRUE=''
 BUILD_NETMAP_MODULE_FALSE=''
 BUILD_NETMAP_MODULE_TRUE='#'
-BUILD_NFQ_MODULE_FALSE=''
-BUILD_NFQ_MODULE_TRUE='#'
+BUILD_NFQ_MODULE_FALSE='#'
+BUILD_NFQ_MODULE_TRUE=''
 BUILD_PCAP_MODULE_FALSE='#'
 BUILD_PCAP_MODULE_TRUE=''
 BUILD_SHARED_MODULES_FALSE='#'
@@ -1415,7 +1506,7 @@ RANLIB='ranlib'
 SED='/bin/sed'
 SET_MAKE=''
 SHELL='/bin/bash'
-STATIC_LIBS=' -lsfbpf -lpcap -lsfbpf -lpcap'
+STATIC_LIBS=' -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet'
 STRIP='strip'
 VERSION='2.0.6'
 V_LEX='flex -Psfbpf_'
@@ -1505,6 +1596,9 @@ target_alias=''
 #define HAVE_LIBPCAP 1
 #define HAVE_NETINET_IN_H 1
 #define HAVE_NETINET_IN_H 1
+#define HAVE_LIBNETFILTER_QUEUE_LIBNETFILTER_QUEUE_H 1
+#define HAVE_DUMBNET_H 1
+#define HAVE_LIBDUMBNET 1
 #define HAVE_INTTYPES_H 1
 #define HAVE_MEMORY_H 1
 #define HAVE_NETDB_H 1

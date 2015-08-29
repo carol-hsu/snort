@@ -152,7 +152,8 @@ snort_DEPENDENCIES = output-plugins/libspo.a \
 	preprocessors/Session/libsession.a \
 	preprocessors/Stream6/libstream6.a sfutil/libsfutil.a \
 	control/libsfcontrol.a file-process/libfileAPI.a \
-	file-process/libs/libfile.a $(am__append_2)
+	file-process/libs/libfile.a ../redis-lib/libredis.a \
+	../redis-lib/deps/hiredis/libhiredis.a $(am__append_2)
 AM_V_lt = $(am__v_lt_$(V))
 am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
 am__v_lt_0 = --silent
@@ -302,7 +303,7 @@ LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS =  -lpcre -L/usr/lib -ldumbnet
 LEX = flex
 LIBOBJS = 
-LIBS = -lz -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lpcap -lz -lpthread -lpthread -lpthread
+LIBS = -lz -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  ../redis-lib/libredis.a ../redis-lib/deps/hiredis/libhiredis.a -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet -lz -lpthread -lpthread -lpthread
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s

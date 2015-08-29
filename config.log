@@ -1194,7 +1194,7 @@ configure:14593: $? = 0
 configure:14593: result: yes
 configure:14593: checking for strlcpy
 configure:14593: gcc -o conftest -g -O2   conftest.c -lnsl -lm -lm  >&5
-/tmp/ccrtDtvs.o: In function `main':
+/tmp/cccpmOee.o: In function `main':
 /home/ubuntu/snort/conftest.c:72: undefined reference to `strlcpy'
 collect2: error: ld returned 1 exit status
 configure:14593: $? = 1
@@ -1277,7 +1277,7 @@ configure: failed program was:
 configure:14593: result: no
 configure:14593: checking for strlcat
 configure:14593: gcc -o conftest -g -O2   conftest.c -lnsl -lm -lm  >&5
-/tmp/ccpjt8Ax.o: In function `main':
+/tmp/cc8uAACi.o: In function `main':
 /home/ubuntu/snort/conftest.c:72: undefined reference to `strlcat'
 collect2: error: ld returned 1 exit status
 configure:14593: $? = 1
@@ -2901,7 +2901,7 @@ configure:15319: $? = 0
 configure:15328: result: yes
 configure:15479: checking for pcap_lex_destroy
 configure:15502: gcc -o conftest -g -O2   conftest.c -lpcap -lnsl -lm -lm  >&5
-/tmp/ccG2hk6t.o: In function `main':
+/tmp/ccSaiOel.o: In function `main':
 /home/ubuntu/snort/conftest.c:76: undefined reference to `pcap_lex_destroy'
 collect2: error: ld returned 1 exit status
 configure:15502: $? = 1
@@ -3506,19 +3506,19 @@ configure:16147: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldu
 configure:16147: $? = 0
 configure:16156: result: yes
 configure:16222: checking for daq_load_modules in -ldaq_static
-configure:16247: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -ldaq_static   -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lpcap >&5
+configure:16247: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -ldaq_static   -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet >&5
 configure:16247: $? = 0
 configure:16256: result: yes
 configure:16329: checking for daq_hup_apply
-configure:16329: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lpcap >&5
+configure:16329: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet >&5
 configure:16329: $? = 0
 configure:16329: result: yes
 configure:16329: checking for daq_acquire_with_meta
-configure:16329: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lpcap >&5
+configure:16329: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet >&5
 configure:16329: $? = 0
 configure:16329: result: yes
 configure:16329: checking for daq_dp_add_dc
-configure:16329: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lpcap >&5
+configure:16329: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet >&5
 configure:16329: $? = 0
 configure:16329: result: yes
 configure:16341: checking for struct _DAQ_DP_key_t.sa.src_ip4
@@ -3620,19 +3620,19 @@ configure:16341: gcc -c -g -O2   -I/usr/include conftest.c >&5
 configure:16341: $? = 0
 configure:16341: result: yes
 configure:16359: checking for daq address space ID
-configure:16383: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lpcap >&5
+configure:16383: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet >&5
 configure:16383: $? = 0
 configure:16383: ./conftest
 configure:16383: $? = 0
 configure:16392: result: yes
 configure:16400: checking for daq flow ID
-configure:16424: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lpcap >&5
+configure:16424: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet >&5
 configure:16424: $? = 0
 configure:16424: ./conftest
 configure:16424: $? = 0
 configure:16433: result: yes
 configure:16441: checking for DAQ_VERDICT_RETRY
-configure:16465: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lpcap >&5
+configure:16465: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet >&5
 configure:16465: $? = 0
 configure:16465: ./conftest
 configure:16465: $? = 0
@@ -3654,7 +3654,7 @@ configure:16628: result: yes
 configure:16628: checking for zlib.h
 configure:16628: result: yes
 configure:16648: checking for inflate in -lz
-configure:16673: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -lz  -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lpcap >&5
+configure:16673: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -lz  -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet >&5
 configure:16673: $? = 0
 configure:16682: result: yes
 configure:16745: checking lzma.h usability
@@ -3877,7 +3877,7 @@ configure:16745: result: no
 configure:16745: checking for lzma.h
 configure:16745: result: no
 configure:16763: checking for lzma_stream_decoder in -llzma
-configure:16788: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -llzma  -lz -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lpcap -lz >&5
+configure:16788: gcc -o conftest -g -O2   -I/usr/include  -lpcre -L/usr/lib -ldumbnet conftest.c -llzma  -lz -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet -lz >&5
 /usr/bin/ld: cannot find -llzma
 collect2: error: ld returned 1 exit status
 configure:16788: $? = 1
@@ -4078,6 +4078,7 @@ config.status:1279: creating tools/u2streamer/Makefile
 config.status:1279: creating tools/file_server/Makefile
 config.status:1279: creating src/win32/Makefile
 config.status:1279: creating config.h
+config.status:1460: config.h is unchanged
 config.status:1508: executing depfiles commands
 config.status:1508: executing libtool commands
 
@@ -4362,7 +4363,7 @@ LD='/usr/bin/ld -m elf_x86_64'
 LDFLAGS=' -lpcre -L/usr/lib -ldumbnet'
 LEX='flex'
 LIBOBJS=''
-LIBS='-lz -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lpcap -lz -lpthread -lpthread -lpthread'
+LIBS='-lz -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet -lz -lpthread -lpthread -lpthread'
 LIBTOOL='$(SHELL) $(top_builddir)/libtool'
 LIPO=''
 LN_S='ln -s'

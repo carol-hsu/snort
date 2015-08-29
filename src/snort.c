@@ -161,6 +161,7 @@
 
 #include "stream_common.h"
 #include "stream5_ha.h"
+#include "../redis-lib/src/redis_lib.h"
 
 #ifdef CONTROL_SOCKET
 #include "dump.h"
@@ -859,6 +860,16 @@ int SnortMain(int argc, char *argv[])
 #if 0
     sleep(10);
 #endif
+
+    if (STATE_EXTERN) {
+    	snort_conf->context = createClient(REDIS_HOST, REDIS_PORT);
+	
+	if (NULL == snort_conf->context) {
+		LogMessage("Couldn't connect to redis server\n");
+	} else {
+		LogMessage("Connected to redis server\n");
+	}
+    }
 
     intf = GetPacketSource(&tmp_ptr);
     daqInit = intf || snort_conf->daq_type;

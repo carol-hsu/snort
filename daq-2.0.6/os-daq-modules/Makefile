@@ -104,9 +104,9 @@ am__append_12 = -DBUILD_IPFW_MODULE
 #am__append_13 = daq_ipq.la
 #am__append_14 = daq_ipq.c
 #am__append_15 = -DBUILD_IPQ_MODULE
-#am__append_16 = daq_nfq.la
-#am__append_17 = daq_nfq.c
-#am__append_18 = -DBUILD_NFQ_MODULE
+am__append_16 = daq_nfq.la
+am__append_17 = daq_nfq.c
+am__append_18 = -DBUILD_NFQ_MODULE
 #am__append_19 = daq_netmap.la
 #am__append_20 = daq_netmap.c
 #am__append_21 = -DBUILD_NETMAP_MODULE
@@ -209,16 +209,16 @@ daq_netmap_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 #am_daq_netmap_la_rpath =  \
 #	-rpath \
 #	$(pkglibdir)
-#daq_nfq_la_DEPENDENCIES = $(top_builddir)/sfbpf/libsfbpf.la
+daq_nfq_la_DEPENDENCIES = $(top_builddir)/sfbpf/libsfbpf.la
 am__daq_nfq_la_SOURCES_DIST = daq_nfq.c
-#am_daq_nfq_la_OBJECTS = daq_nfq_la-daq_nfq.lo
+am_daq_nfq_la_OBJECTS = daq_nfq_la-daq_nfq.lo
 daq_nfq_la_OBJECTS = $(am_daq_nfq_la_OBJECTS)
 daq_nfq_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(daq_nfq_la_CFLAGS) \
 	$(CFLAGS) $(daq_nfq_la_LDFLAGS) $(LDFLAGS) -o $@
-#am_daq_nfq_la_rpath =  \
-#	-rpath \
-#	$(pkglibdir)
+am_daq_nfq_la_rpath =  \
+	-rpath \
+	$(pkglibdir)
 daq_pcap_la_DEPENDENCIES =
 am__daq_pcap_la_SOURCES_DIST = daq_pcap.c
 am_daq_pcap_la_OBJECTS = daq_pcap_la-daq_pcap.lo
@@ -242,8 +242,8 @@ am__objects_4 =  \
 	libdaq_static_modules_la-daq_ipfw.lo
 #am__objects_5 =  \
 #	libdaq_static_modules_la-daq_ipq.lo
-#am__objects_6 =  \
-#	libdaq_static_modules_la-daq_nfq.lo
+am__objects_6 =  \
+	libdaq_static_modules_la-daq_nfq.lo
 #am__objects_7 = libdaq_static_modules_la-daq_netmap.lo
 am_libdaq_static_modules_la_OBJECTS =  \
 	libdaq_static_modules_la-daq_static_modules.lo \
@@ -391,7 +391,7 @@ RANLIB = ranlib
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
-STATIC_LIBS =  -lsfbpf -lpcap -lsfbpf -lpcap
+STATIC_LIBS =  -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet
 STRIP = strip
 VERSION = 2.0.6
 V_LEX = flex -Psfbpf_
@@ -485,10 +485,10 @@ daq_ipfw_la_LIBADD = $(top_builddir)/sfbpf/libsfbpf.la
 #daq_ipq_la_CFLAGS = -DBUILDING_SO
 #daq_ipq_la_LDFLAGS = -module -export-dynamic -avoid-version -shared -L/usr/lib -ldumbnet 
 #daq_ipq_la_LIBADD = -lipq -L/usr/lib -ldumbnet $(top_builddir)/sfbpf/libsfbpf.la
-#daq_nfq_la_SOURCES = daq_nfq.c
-#daq_nfq_la_CFLAGS = -DBUILDING_SO
-#daq_nfq_la_LDFLAGS = -module -export-dynamic -avoid-version -shared -L/usr/lib -ldumbnet 
-#daq_nfq_la_LIBADD = -lnfnetlink -lnetfilter_queue -L/usr/lib -ldumbnet $(top_builddir)/sfbpf/libsfbpf.la
+daq_nfq_la_SOURCES = daq_nfq.c
+daq_nfq_la_CFLAGS = -DBUILDING_SO
+daq_nfq_la_LDFLAGS = -module -export-dynamic -avoid-version -shared -L/usr/lib -ldumbnet 
+daq_nfq_la_LIBADD = -lnfnetlink -lnetfilter_queue -L/usr/lib -ldumbnet $(top_builddir)/sfbpf/libsfbpf.la
 #daq_netmap_la_SOURCES = daq_netmap.c
 #daq_netmap_la_CFLAGS = -DBUILDING_SO
 #daq_netmap_la_LDFLAGS = -module -export-dynamic -avoid-version -shared 

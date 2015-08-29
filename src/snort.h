@@ -61,6 +61,7 @@
 #include "detection_filter.h"
 #include "generators.h"
 #include <signal.h>
+#include "../redis-lib/deps/hiredis/hiredis.h"
 #if defined(INLINE_FAILOPEN) || \
     defined(TARGET_BASED) || defined(SNORT_RELOAD)
 # include <pthread.h>
@@ -962,6 +963,7 @@ typedef struct _SnortConfig
 
     int internal_log_level;
     int suppress_config_log;
+    redisContext *context;              /* redis context */ 
 } SnortConfig;
 
 /* struct to collect packet statistics */

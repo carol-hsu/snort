@@ -16,7 +16,7 @@
 /* #undef HAVE_DNET_H */
 
 /* Define to 1 if you have the <dumbnet.h> header file. */
-/* #undef HAVE_DUMBNET_H */
+#define HAVE_DUMBNET_H 1
 
 /* Define to 1 if you have the `gethostbyname' function. */
 #define HAVE_GETHOSTBYNAME 1
@@ -31,14 +31,14 @@
 /* #undef HAVE_LIBDNET */
 
 /* Define to 1 if you have the `dumbnet' library (-ldumbnet). */
-/* #undef HAVE_LIBDUMBNET */
+#define HAVE_LIBDUMBNET 1
 
 /* Define to 1 if you have the <libipq.h> header file. */
 /* #undef HAVE_LIBIPQ_H */
 
 /* Define to 1 if you have the <libnetfilter_queue/libnetfilter_queue.h>
    header file. */
-/* #undef HAVE_LIBNETFILTER_QUEUE_LIBNETFILTER_QUEUE_H */
+#define HAVE_LIBNETFILTER_QUEUE_LIBNETFILTER_QUEUE_H 1
 
 /* Define to 1 if you have the `pcap' library (-lpcap). */
 #define HAVE_LIBPCAP 1

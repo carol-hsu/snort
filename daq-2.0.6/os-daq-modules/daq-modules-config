@@ -8,7 +8,7 @@
 prefix=/usr/local
 exec_prefix=${prefix}
 LIBDIR=${exec_prefix}/lib
-STATIC_LIBS=" -lsfbpf -lpcap -lsfbpf -lpcap"
+STATIC_LIBS=" -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet"
 
 static=0
 show_libs=0
