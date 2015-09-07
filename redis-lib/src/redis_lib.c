@@ -22,6 +22,9 @@ redisContext *createClient(char *host, int port) {
 	return c;
 }
 
+char *redis_alloc_cache(redisContext *c, char *key, int key_len, value_len) {
+}
+
 // Syncronous Get and Set methods. return 0 on failure, > 0 success.
 int redis_syncSet(redisContext *c, char *key, int key_len, char *value, int value_len) {
 	redisReply *reply;
