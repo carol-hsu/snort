@@ -127,6 +127,8 @@ dcerpc.h	./src/dynamic-preprocessors/dcerpc2/includes/dcerpc.h	1
 debug.c	./src/debug.c	1
 decode.c	./src/decode.c	1
 decode.h	./src/decode.h	1
+demo.c	./src/cserialization-0.4/demo.c	1
+demo.h	./src/cserialization-0.4/demo.h	1
 detect.c	./src/detect.c	1
 detect.h	./src/detect.h	1
 detection_filter.c	./src/detection_filter.c	1
@@ -172,6 +174,9 @@ event_queue.c	./src/event_queue.c	1
 event_queue.h	./src/event_queue.h	1
 event_wrapper.c	./src/event_wrapper.c	1
 event_wrapper.h	./src/event_wrapper.h	1
+example1.c	./src/cserialization-0.4/example1.c	1
+example2.c	./src/cserialization-0.4/example2.c	1
+example3.c	./src/cserialization-0.4/example3.c	1
 example-ae.c	./redis-lib/deps/hiredis/examples/example-ae.c	1
 example.c	./redis-lib/deps/hiredis/examples/example.c	1
 example-libev.c	./redis-lib/deps/hiredis/examples/example-libev.c	1
@@ -514,6 +519,10 @@ segment_mem.c	./src/sfutil/segment_mem.c	1
 segment_mem.h	./src/dynamic-preprocessors/include/segment_mem.h	1
 segment_mem.h	./src/sfutil/segment_mem.h	1
 semaphore.h	./src/win32/WIN32-Includes/WinPCAP/semaphore.h	1
+serialize.c	./src/cserialization-0.4/serialize.c	1
+serialize.c	./src/serialize.c	1
+serialize.h	./src/cserialization-0.4/serialize.h	1
+serialize.h	./src/serialize.h	1
 service_api.h	./src/dynamic-preprocessors/appid/service_plugins/service_api.h	1
 service_base.c	./src/dynamic-preprocessors/appid/service_plugins/service_base.c	1
 service_base.h	./src/dynamic-preprocessors/appid/service_plugins/service_base.h	1

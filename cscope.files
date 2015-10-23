@@ -78,6 +78,13 @@
 /home/ubuntu/snort/src/control/sfcontrol_funcs.h
 /home/ubuntu/snort/src/control/sfcontrol.h
 /home/ubuntu/snort/src/cpuclock.h
+/home/ubuntu/snort/src/cserialization-0.4/demo.c
+/home/ubuntu/snort/src/cserialization-0.4/demo.h
+/home/ubuntu/snort/src/cserialization-0.4/example1.c
+/home/ubuntu/snort/src/cserialization-0.4/example2.c
+/home/ubuntu/snort/src/cserialization-0.4/example3.c
+/home/ubuntu/snort/src/cserialization-0.4/serialize.c
+/home/ubuntu/snort/src/cserialization-0.4/serialize.h
 /home/ubuntu/snort/src/debug.c
 /home/ubuntu/snort/src/decode.c
 /home/ubuntu/snort/src/decode.h
@@ -875,6 +882,8 @@
 /home/ubuntu/snort/src/rate_filter.h
 /home/ubuntu/snort/src/rule_option_types.h
 /home/ubuntu/snort/src/rules.h
+/home/ubuntu/snort/src/serialize.c
+/home/ubuntu/snort/src/serialize.h
 /home/ubuntu/snort/src/sfdaq.c
 /home/ubuntu/snort/src/sfdaq.h
 /home/ubuntu/snort/src/sf_protocols.h

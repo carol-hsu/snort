@@ -20,10 +20,6 @@
 /* Define if errlist is predefined */
 #define ERRLIST_PREDEFINED 1
 
-#define STATE_EXTERN 0
-#define REDIS_HOST   "10.0.1.4"
-#define REDIS_PORT   6379
-
 /* Build with extended file inspection features. (Experimental) */
 /* #undef FEAT_FILE_INSPECT */
 

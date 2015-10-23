@@ -108,8 +108,8 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__snort_SOURCES_DIST = cdefs.h event.h generators.h sf_protocols.h \
-	plugin_enum.h rules.h treenodes.h checksum.h debug.c \
-	snort_debug.h decode.c decode.h encode.c encode.h active.c \
+	plugin_enum.h rules.h treenodes.h checksum.h serialize.h debug.c \
+	serialize.c snort_debug.h decode.c decode.h encode.c encode.h active.c \
 	active.h log.c log.h mstring.c mstring.h hashstring.c \
 	hashstring.h parser.c parser.h profiler.c profiler.h \
 	plugbase.c plugbase.h preprocids.h snort.c snort.h build.h \
@@ -142,7 +142,7 @@ am_snort_OBJECTS = debug.$(OBJEXT) decode.$(OBJEXT) encode.$(OBJEXT) \
 	log_text.$(OBJEXT) detection_filter.$(OBJEXT) \
 	detection_util.$(OBJEXT) rate_filter.$(OBJEXT) \
 	obfuscation.$(OBJEXT) sfdaq.$(OBJEXT) \
-	idle_processing.$(OBJEXT) $(am__objects_2)
+	idle_processing.$(OBJEXT) serialize.$(OBJEXT) $(am__objects_2)
 snort_OBJECTS = $(am_snort_OBJECTS)
 snort_DEPENDENCIES = output-plugins/libspo.a \
 	detection-plugins/libspd.a dynamic-plugins/libdynamic.a \
@@ -152,8 +152,7 @@ snort_DEPENDENCIES = output-plugins/libspo.a \
 	preprocessors/Session/libsession.a \
 	preprocessors/Stream6/libstream6.a sfutil/libsfutil.a \
 	control/libsfcontrol.a file-process/libfileAPI.a \
-	file-process/libs/libfile.a ../redis-lib/libredis.a \
-	../redis-lib/deps/hiredis/libhiredis.a $(am__append_2)
+	file-process/libs/libfile.a $(am__append_2)
 AM_V_lt = $(am__v_lt_$(V))
 am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
 am__v_lt_0 = --silent
@@ -303,7 +302,7 @@ LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS =  -lpcre -L/usr/lib -ldumbnet
 LEX = flex
 LIBOBJS = 
-LIBS = -lz -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  ../redis-lib/libredis.a ../redis-lib/deps/hiredis/libhiredis.a -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet -lz -lpthread -lpthread -lpthread
+LIBS = -lz -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules ../redis-lib/libredis.a ../redis-lib/deps/hiredis/libhiredis.a /usr/lib/x86_64-linux-gnu/libevent.a -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet -lz -lpthread -lpthread -lpthread -levent 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s
@@ -402,8 +401,8 @@ top_srcdir = ..
 AUTOMAKE_OPTIONS = foreign no-dependencies
 #SNPRINTF_SOURCES = snprintf.c snprintf.h
 snort_SOURCES = cdefs.h event.h generators.h sf_protocols.h \
-	plugin_enum.h rules.h treenodes.h checksum.h debug.c \
-	snort_debug.h decode.c decode.h encode.c encode.h active.c \
+	plugin_enum.h rules.h treenodes.h checksum.h serialize.h debug.c \
+	serialize.c snort_debug.h decode.c decode.h encode.c encode.h active.c \
 	active.h log.c log.h mstring.c mstring.h hashstring.c \
 	hashstring.h parser.c parser.h profiler.c profiler.h \
 	plugbase.c plugbase.h preprocids.h snort.c snort.h build.h \

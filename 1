@@ -1,0 +1,89 @@
+    1  sudo sysctl -w net.ipv4.ip_forward=1
+    2  sudo sysctl -w net.ipv4.conf.eth0.rp_filter=0
+    3  sudo echo 0 | tee /proc/sys/net/ipv4/conf/*/send_redirects
+    4  ifconfig
+    5  sudo apt-get install git
+    6  git clone https://github.com/mohankku/snort.git
+    7  cd snort
+    8  cd ..
+    9  git clone https://github.com/mohankku/prads_extern.git
+   10  ls
+   11  cd snort/
+   12  ls
+   13  cd redis-lib/
+   14  ls
+   15  cd ..
+   16  rm -rf redis-lib/
+   17  cp -R ~/prads_extern/redis-lib/ .
+   18  ls -lrt
+   19  cd redis-lib/
+   20  ls
+   21  cd deps/hiredis/
+   22  make
+   23  apt-cache search make
+   24  sudo apt-get install make
+   25  make
+   26  sudo apt-get install gcc
+   27  make
+   28  sudo apt-get update
+   29  sudo apt-get install gcc
+   30  make
+   31  cd ..
+   32  ls -lrt
+   33  cd ..
+   34  ls -lrt
+   35  sudo apt-get install makedepend
+   36  sudo apt-cache search makedepend
+   37  sudo apt-get install xutils-dev
+   38  make
+   39  make clean
+   40  make
+   41  sudo apt-get install libevent
+   42  sudo apt-get install libevent-dev
+   43  make clean
+   44  make
+   45  ls -lrt
+   46  cd ..
+   47  ls -lrt
+   48  cd daq-2.0.6/
+   49  ls
+   50  ./configure
+   51  sudo apt-get install bison flex
+   52  ./config
+   53  ./configure
+   54  sudo apt-get install libpcap-dev
+   55  ./config
+   56  ./configure
+   57  sudo apt-get install libnetfilter-queue-dev libnetfilter-queue1 libnfnetlink-dev libnfnetlink0
+   58  ./config
+   59  ./configure
+   60  apt-cache search libdnet
+   61  sudo apt-get install libdumbnet-dev libdumbnet1
+   62  ./configure
+   63  ./make
+   64  make
+   65  cd ..
+   66  rm -rf daq-2.0.6/
+   67  wget https://www.snort.org/downloads/snort/daq-2.0.6.tar.gz
+   68  tar xvfz daq-2.0.6.tar.gz
+   69  cd daq-2.0.6/
+   70  ./configure
+   71  MAKE
+   72  make
+   73  sudo make install
+   74  cd ..
+   75  ./configure
+   76  sudo apt-get install libpcre3-dev
+   77  ./configure
+   78  apt-file search /usr/include/zlib.h
+   79  sudo apt-get install zlib1g-dev
+   80  ./config
+   81  ./configure
+   82  make
+   83  ./configure --enable-sourcefire
+   84  make
+   85  mkdir log
+   86  sudo ./src/snort --daq nfq -Q -l log
+   87  sudo iptables -A FORWARD -j NFQUEUE 
+   88  sudo ./src/snort --daq nfq -Q -l log
+   89  history > 1

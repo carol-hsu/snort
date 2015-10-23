@@ -31,6 +31,9 @@
 #include "treenodes.h"
 #include "event.h"
 #include "decode.h"
+#include "serialize.h"
+#include "../redis-lib/deps/hiredis/hiredis.h"
+#include "../redis-lib/src/redis_lib.h"
 
 
 #define TAG_SESSION   1
@@ -50,5 +53,11 @@ void CleanupTag(void);
 int CheckTagList(Packet *, Event *, void**);
 void SetTags(Packet *, OptTreeNode *, RuleTreeNode *, uint16_t);
 void TagCacheReset(void);
+
+ser_tra_t *head_tra;
+ser_tra_t* setup_serialize_translators();
+
+int get_key_value(void *key, char **data);
+int put_value_struct(char *data, void *c);
 
 #endif /* __TAG_H__ */

@@ -62,11 +62,15 @@
 #include "generators.h"
 #include <signal.h>
 #include "../redis-lib/deps/hiredis/hiredis.h"
+#include "serialize.h"
 #if defined(INLINE_FAILOPEN) || \
     defined(TARGET_BASED) || defined(SNORT_RELOAD)
 # include <pthread.h>
 #endif
 
+#define STATE_EXTERN 1
+#define REDIS_HOST   "10.0.1.3"
+#define REDIS_PORT   6379
 
 /*  D E F I N E S  ************************************************************/
 /* Mark this as a modern version of snort */

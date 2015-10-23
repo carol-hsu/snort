@@ -58,6 +58,10 @@
 #define TAG_PRUNE_QUANTUM   300
 #define TAG_MEMCAP          4194304  /* 4MB */
 
+long overall_pserz_time = 0;
+long overall_pdeserz_time = 0;
+long overall_pstate_size = 0;
+
 /*  D A T A   S T R U C T U R E S  **********************************/
 /**Key used for identifying a session or host.
  */
@@ -349,6 +353,9 @@ void InitTag(void)
                 NULL,                /* anr free function */
                 TagFreeHostNodeFunc, /* user free function */
                 0);                  /* recycle node flag */
+
+   setup_serialize_translators();
+   register_encode_decode(get_key_value, put_value_struct,NULL,NULL,NULL,NULL,NULL);
 }
 
 void CleanupTag(void)
@@ -396,9 +403,13 @@ static void TagHost(Packet *p, TagData *tag, uint32_t time, uint16_t event_id, v
 static void AddTagNode(Packet *p, TagData *tag, int mode, uint32_t now,
                 uint16_t event_id, void* log_list)
 {
+    tTagSessionKey key;
     TagNode *idx;  /* index pointer */
     TagNode *returned;
     SFXHASH *tag_cache_ptr = NULL;
+    int ret = 0;
+    uint32_t flags;
+    time_t exp;
 
     DEBUG_WRAP(DebugMessage(DEBUG_FLOW, "Adding new Tag Head\n"););
 
@@ -424,7 +435,13 @@ static void AddTagNode(Packet *p, TagData *tag, int mode, uint32_t now,
         DEBUG_WRAP(DebugMessage(DEBUG_FLOW,"Host Tag!\n"););
         tag_cache_ptr = host_tag_cache_ptr;
     }
-    idx = TagAlloc(tag_cache_ptr);
+
+    if (STATE_EXTERN) {
+	ret = create_item((void *) &key, sizeof(key), (void *) &idx, sizeof(TagNode), 
+                          flags, exp);
+    } else {
+    	idx = TagAlloc(tag_cache_ptr);
+    }
 
     /* If a TagNode couldn't be allocated, just write an error message
      * and return - won't be able to track this one. */
@@ -796,3 +813,87 @@ void SetTags(Packet *p, OptTreeNode *otn, RuleTreeNode *rtn, uint16_t event_id)
     return;
 }
 
+ser_tra_t* setup_serialize_translators()
+{
+    head_tra = ser_new_tra("TagNode",sizeof(TagNode),NULL);
+    ser_new_field(head_tra,"tTagSessionKey",0,"key",offsetof(TagNode,key));
+    ser_new_field(head_tra,"uint8_t",0,"proto",offsetof(TagNode,proto));
+    ser_new_field(head_tra,"int",0,"seconds",offsetof(TagNode,seconds));
+    ser_new_field(head_tra,"int",0,"packets",offsetof(TagNode,packets));
+    ser_new_field(head_tra,"int",0,"bytes",offsetof(TagNode,bytes));
+    ser_new_field(head_tra,"int",0,"pkt_count",offsetof(TagNode,pkt_count));
+    ser_new_field(head_tra,"int",0,"metric",offsetof(TagNode,metric));
+    ser_new_field(head_tra,"int",0,"mode",offsetof(TagNode,mode));
+    ser_new_field(head_tra,"uint32_t",0,"last_access",offsetof(TagNode,last_access));
+    ser_new_field(head_tra,"uint16_t",0,"event_id",offsetof(TagNode,event_id));
+    ser_new_field(head_tra,"timeval",0,"event_time",offsetof(TagNode,event_time));
+    ser_new_field(head_tra,"int",0,"log_list",offsetof(TagNode,log_list));
+
+    return head_tra;
+}
+
+char* serialize_tag_asset(TagNode *node)
+{
+    void *log = node->log_list;
+    node->log_list = NULL;
+    char *state = ser_ialize(head_tra, "TagNode", node, NULL, 0);
+    node->log_list = log;
+    return state;
+}
+
+int get_key_value(void *key, char **data) 
+{
+    TagNode idx;
+    TagNode *returned;
+    int count = 0;
+    uint32_t hash;
+
+    returned = (TagNode *) sfxhash_find(ssn_tag_cache_ptr, &idx);
+
+    if(returned)
+    {
+            struct timeval start_serialize, end_serialize;
+            gettimeofday(&start_serialize, NULL);
+
+            *data = (char *)serialize_tag_asset(returned);
+
+            gettimeofday(&end_serialize, NULL);
+            long sec = end_serialize.tv_sec - start_serialize.tv_sec;
+            long usec = end_serialize.tv_usec - start_serialize.tv_usec;
+            long total = (sec * 1000 * 1000) + usec;
+                        overall_pserz_time += total;
+                        overall_pstate_size     += strlen(data);
+    }
+    return 1;
+}
+
+int put_value_struct(char *data, void *c)
+{
+   TagNode *curr, *curr_val;
+
+   if ((!data) || (!c)) {
+        return 0;
+   }
+
+   printf("received value \n");
+
+   curr_val = (TagNode*) c;
+
+   struct timeval start_deserialize, end_deserialize;
+   gettimeofday(&start_deserialize, NULL);
+
+   curr = ser_parse(head_tra, "TagNode", data, NULL);
+   *curr_val = *curr;
+   free(curr);
+
+   gettimeofday(&end_deserialize, NULL);
+   long sec = end_deserialize.tv_sec - start_deserialize.tv_sec;
+   long usec = end_deserialize.tv_usec - start_deserialize.tv_usec;
+   long total = (sec * 1000 * 1000) + usec;
+   printf("STATS: PERFLOW: TIME TO DESERIALIZE CURRENT = %ldus\n", total);
+   //printf("STATS: PERFLOW: TIME TO DESERIALIZE OVERALL = %ldus\n", overall_pdeserz_time);
+
+   curr->log_list = NULL;
+
+   return 1;
+}
