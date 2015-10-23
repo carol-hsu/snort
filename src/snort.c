@@ -862,7 +862,7 @@ int SnortMain(int argc, char *argv[])
 #endif
 
     if (STATE_EXTERN) {
-    	snort_conf->context = create_cache(REDIS_HOST, REDIS_PORT, 100, NO_CONSISTENCY, 5);
+    	snort_conf->context = create_cache(REDIS_HOST, REDIS_PORT, 100, NO_CONSISTENCY, 10);
 	
 	if (NULL == snort_conf->context) {
 		LogMessage("Couldn't connect to redis server\n");

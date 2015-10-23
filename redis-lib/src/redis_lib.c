@@ -87,7 +87,8 @@ static void *thread_start(void *arg)
 	sleep(10);
 
 	while (1) {
-		sleep(client.time);
+		//sleep(client.time);
+		sleep(1);
 		
 		for (i=0; i<BUCKET_SIZE; i++) {
 			it = client.passet[i];
@@ -211,7 +212,7 @@ static void *thread_start(void *arg)
 						it->mdata->lock = 1;
 					}
 				}
-                                client.get((void *) it->key, &p);
+                                client.get((void *) it->data, &p);
                                 if (p) {
                                 	p_size = strlen(p);
                                         total_size = p_size + sizeof(meta_data);
@@ -288,7 +289,7 @@ redis_client *create_cache(char *host, int port, uint32_t vnf_id,
 			pthread_mutex_init(&client.passet[i]->mutex, NULL);
 		}
 	}
-	//pthread_create(&thread_id1, NULL, &thread_start, NULL);
+	pthread_create(&thread_id1, NULL, &thread_start, NULL);
 	if ((client.flags & ASYNC) || (client.flags & SEQUENTIAL_CONSISTENCY)) {
 		pthread_create(&thread_id2, NULL, &thread_event, NULL);
 	}
@@ -328,7 +329,7 @@ int unlock_and_update_item(void* key) {
 	it = client.passet[hash];
 
 	if (it->key) {
-		client.get((void *) it->key, &p);
+		client.get((void *) it->data, &p);
                 if (client.flags & SEQUENTIAL_CONSISTENCY) {
 	                if (it->mdata->lock == 1) {
                         	it->mdata->lock = 0;
@@ -338,7 +339,7 @@ int unlock_and_update_item(void* key) {
                 } else {
 			return 0;
 		}
-                client.get((void *) it->key, &p);
+                client.get((void *) it->data, &p);
                 if (p) {
                 	p_size = strlen(p);
                 	total_size = p_size + sizeof(meta_data);
@@ -527,7 +528,7 @@ int redis_syncSet(redisContext *c, char *key, int key_len, char *value, int valu
 	}
 	
 	reply = redisCommand(c, "SET %b %b", key, (size_t) key_len, value, (size_t) value_len);
-	//printf("SET: %s\n", reply->str);
+	printf("SET: %s\n", reply->str);
 	freeReplyObject(reply);
 
 	return 1;

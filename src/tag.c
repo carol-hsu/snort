@@ -437,7 +437,12 @@ static void AddTagNode(Packet *p, TagData *tag, int mode, uint32_t now,
     }
 
     if (STATE_EXTERN) {
-	ret = create_item((void *) &key, sizeof(key), (void *) &idx, sizeof(TagNode), 
+    	IP_COPY_VALUE(key.sip, GET_SRC_IP(p));
+    	IP_COPY_VALUE(key.dip, GET_DST_IP(p));
+    	key.sp = p->sp;
+    	key.dp = p->dp;
+
+	ret = create_item((void *) &key, sizeof(tTagSessionKey), (void *) &idx, sizeof(TagNode),
                           flags, exp);
     } else {
     	idx = TagAlloc(tag_cache_ptr);
@@ -844,11 +849,16 @@ char* serialize_tag_asset(TagNode *node)
 int get_key_value(void *key, char **data) 
 {
     TagNode idx;
+    tTagSessionKey *tkey;
     TagNode *returned;
     int count = 0;
     uint32_t hash;
 
-    returned = (TagNode *) sfxhash_find(ssn_tag_cache_ptr, &idx);
+    //tkey = (tTagSessionKey *)key;
+    //idx.key = *tkey;
+
+    //returned = (TagNode *) sfxhash_find(ssn_tag_cache_ptr, &idx);
+    returned = (TagNode *) key;
 
     if(returned)
     {
