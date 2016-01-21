@@ -108,8 +108,8 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__snort_SOURCES_DIST = cdefs.h event.h generators.h sf_protocols.h \
-	plugin_enum.h rules.h treenodes.h checksum.h serialize.h debug.c \
-	serialize.c snort_debug.h decode.c decode.h encode.c encode.h active.c \
+	plugin_enum.h rules.h treenodes.h checksum.h debug.c \
+	snort_debug.h decode.c decode.h encode.c encode.h active.c \
 	active.h log.c log.h mstring.c mstring.h hashstring.c \
 	hashstring.h parser.c parser.h profiler.c profiler.h \
 	plugbase.c plugbase.h preprocids.h snort.c snort.h build.h \
@@ -126,7 +126,7 @@ am__snort_SOURCES_DIST = cdefs.h event.h generators.h sf_protocols.h \
 	detection_util.c detection_util.h rate_filter.c rate_filter.h \
 	obfuscation.c obfuscation.h rule_option_types.h sfdaq.c \
 	sfdaq.h idle_processing.c idle_processing.h \
-	idle_processing_funcs.h dump.c dump.h
+	idle_processing_funcs.h dump.c dump.h serialize.c serialize.h
 #am__objects_1 = snprintf.$(OBJEXT)
 #am__objects_2 = dump.$(OBJEXT)
 am_snort_OBJECTS = debug.$(OBJEXT) decode.$(OBJEXT) encode.$(OBJEXT) \
@@ -275,9 +275,9 @@ CC = gcc
 CCDEPMODE = depmode=gcc3
 CCONFIGFLAGS =  -DSF_VISIBILITY -fvisibility=hidden
 CFLAGS = -g -O2 -DSF_VISIBILITY -fvisibility=hidden -fno-strict-aliasing -Wall
-CONFIGFLAGS =  -DSF_WCHAR -DTARGET_BASED -DPERF_PROFILING -DPERF_PROFILING -DSNORT_RELOAD -DNO_NON_ETHER_DECODER -DNORMALIZER -DACTIVE_RESPONSE
+CONFIGFLAGS =  -DSF_WCHAR -DTARGET_BASED -DPERF_PROFILING -DSNORT_RELOAD -DNO_NON_ETHER_DECODER -DNORMALIZER -DACTIVE_RESPONSE
 CPP = gcc -E
-CPPFLAGS = -DGRE -DMPLS -DPPM_MGR -DNDEBUG -DSOURCEFIRE -DPPM_MGR -DENABLE_REACT -DENABLE_RESPOND -DENABLE_RESPONSE3 -DSF_WCHAR -DTARGET_BASED -DPERF_PROFILING -DPERF_PROFILING -DSNORT_RELOAD -DNO_NON_ETHER_DECODER -DNORMALIZER -DACTIVE_RESPONSE
+CPPFLAGS = -DGRE -DMPLS -DPPM_MGR -DNDEBUG -DENABLE_REACT -DENABLE_RESPOND -DENABLE_RESPONSE3 -DSF_WCHAR -DTARGET_BASED -DPERF_PROFILING -DSNORT_RELOAD -DNO_NON_ETHER_DECODER -DNORMALIZER -DACTIVE_RESPONSE
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -302,7 +302,8 @@ LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS =  -lpcre -L/usr/lib -ldumbnet
 LEX = flex
 LIBOBJS = 
-LIBS = -lz -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules ../redis-lib/libredis.a ../redis-lib/deps/hiredis/libhiredis.a /usr/lib/x86_64-linux-gnu/libevent.a -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet -lz -lpthread -lpthread -lpthread -levent 
+LIBS = -lz -ldaq_static -ldumbnet -lpcre -lpcap -lnsl -lm -lm  -ldl -L/usr/local/lib -ldaq_static_modules  -lsfbpf -lpcap -lsfbpf -lnfnetlink -lnetfilter_queue -lsfbpf -lpcap -L/usr/lib -ldumbnet -lz -lpthread -lpthread -lpthread
+LIBS += ../redis-lib/libredis.a ../redis-lib/deps/hiredis/libhiredis.a
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s
@@ -401,8 +402,8 @@ top_srcdir = ..
 AUTOMAKE_OPTIONS = foreign no-dependencies
 #SNPRINTF_SOURCES = snprintf.c snprintf.h
 snort_SOURCES = cdefs.h event.h generators.h sf_protocols.h \
-	plugin_enum.h rules.h treenodes.h checksum.h serialize.h debug.c \
-	serialize.c snort_debug.h decode.c decode.h encode.c encode.h active.c \
+	plugin_enum.h rules.h treenodes.h checksum.h debug.c \
+	snort_debug.h decode.c decode.h encode.c encode.h active.c \
 	active.h log.c log.h mstring.c mstring.h hashstring.c \
 	hashstring.h parser.c parser.h profiler.c profiler.h \
 	plugbase.c plugbase.h preprocids.h snort.c snort.h build.h \
@@ -418,7 +419,7 @@ snort_SOURCES = cdefs.h event.h generators.h sf_protocols.h \
 	log_text.h detection_filter.c detection_filter.h \
 	detection_util.c detection_util.h rate_filter.c rate_filter.h \
 	obfuscation.c obfuscation.h rule_option_types.h sfdaq.c \
-	sfdaq.h idle_processing.c idle_processing.h \
+	sfdaq.h idle_processing.c idle_processing.h serialize.c serialize.h \
 	idle_processing_funcs.h $(am__append_1)
 snort_LDADD = output-plugins/libspo.a detection-plugins/libspd.a \
 	dynamic-plugins/libdynamic.a \
